@@ -9,7 +9,8 @@ app.use(express.json())
 
 
 app.use(cors({
-  origin: '*' // allow all origins, or replace '*' with your frontend URL
+    origin: 'http://localhost:8081',  // <-- frontend origin
+// allow all origins, or replace '*' with your frontend URL
 }));
 app.get('/', (req, res) => {
   res.json({ message: "hiii " })
