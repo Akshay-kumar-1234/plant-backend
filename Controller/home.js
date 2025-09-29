@@ -17,7 +17,7 @@ function organizeData(rawData) {
     if (!result[line]) {
       result[line] = {};
     }
-
+    
     // ✅ Create a new field group if not exist
     if (!result[line][field]) {
       result[line][field] = [];
@@ -58,10 +58,8 @@ function computeJPH(organizedData) {
  // yha tkkk 
 
 
-
 const ORG = INFLUX_ORG;
 const DEFAULT_BUCKET = INFLUX_BUCKET;
-
 
 
 export async function checkConnection(req, res) {

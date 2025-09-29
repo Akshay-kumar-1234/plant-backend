@@ -10,15 +10,21 @@ app.use(express.json())
 
 app.use(cors({
     origin: 'http://localhost:8081',  // <-- frontend origin
-// allow all origins, or replace '*' with your frontend URL
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+
+app.options('*', cors());
+
+
 app.get('/', (req, res) => {
   res.json({ message: "hiii " })
 });
 
 
 //Api route made by me 
-app.use('/api/influx',InfluxRouter);
+app.use('/influx',InfluxRouter);
 
 
 // // const Server=app.listen(3001)  // this already present 
