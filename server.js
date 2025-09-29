@@ -9,15 +9,8 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin: 'http://localhost:8081',  // <-- frontend origin
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+  origin: '*' // allow all origins, or replace '*' with your frontend URL
 }));
-
-
-app.options('*', cors());
-
-
 app.get('/', (req, res) => {
   res.json({ message: "hiii " })
 });
