@@ -13,7 +13,6 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
-app.options("*", cors());
 
 app.get('/', (req, res) => {
   res.json({ message: "hiii " })
