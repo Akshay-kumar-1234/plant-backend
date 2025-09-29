@@ -13,6 +13,12 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
+});
 
 app.get('/', (req, res) => {
   res.json({ message: "hiii " })
@@ -23,14 +29,14 @@ app.get('/', (req, res) => {
 app.use('/influx',InfluxRouter);
 
 
-// // const Server=app.listen(3001)  // this already present 
- const PORT = process.env.PORT || 3001; 
+// // // const Server=app.listen(3001)  // this already present 
+//  const PORT = process.env.PORT || 3001; 
 
 
-// // done by me for the app 
-const Server = app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 Server running on http://0.0.0.0:${PORT}`);
-});
+// // // done by me for the app 
+// const Server = app.listen(PORT, "0.0.0.0", () => {
+//   console.log(`🚀 Server running on http://0.0.0.0:${PORT}`);
+// });
 
 
 
