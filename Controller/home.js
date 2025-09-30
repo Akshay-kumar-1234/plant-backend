@@ -81,7 +81,7 @@ export async function queryData(req, res) {
     // 2️⃣ Setup params
     const bucket = DEFAULT_BUCKET;
     const field = req.query.field;
-    const rangeInput = req.query.range || "-24h";
+    const rangeInput = req.query.range || "-12h";
     const limit = Number(req.query.limit || 100);
 
     console.log("Bucket:", bucket);
